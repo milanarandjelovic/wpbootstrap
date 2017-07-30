@@ -7,6 +7,11 @@
  * @package WPBootstrap
  */
 
+/**
+ * Bootstrap navwlaker class
+ */
+require_once get_template_directory() . '/inc/class/wp-bootstrap-navwalker.php';
+
 if ( ! function_exists( 'wp_bootstrap_setup' ) ):
     /**
      * Sets up theme defaults and registers support for various WordPress features.
