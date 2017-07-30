@@ -16,11 +16,12 @@
   }
 
   .post__content {
-    .more-link {
-      display: block;
+    .more-link-holder {
       float: right;
-      text-transform: uppercase;
-      color: #656269;
+      display: block;
+      .more-link {
+        text-transform: uppercase;
+      }
     }
   }
 }
