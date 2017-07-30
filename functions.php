@@ -16,6 +16,7 @@ require_once get_template_directory() . '/inc/class/wp-bootstrap-navwalker.php';
  * Include custom widgets
  */
 require_once get_template_directory() . '/inc/widgets/widget-categories.php';
+require_once get_template_directory() . '/inc/widgets/widget-recent-posts.php';
 
 if ( ! function_exists( 'wp_bootstrap_setup' ) ):
     /**
@@ -43,6 +44,7 @@ if ( ! function_exists( 'wp_bootstrap_setup' ) ):
          */
         add_theme_support( 'post-thumbnails' );
         add_image_size( 'wp_bootstrap_post-thumbnail', 750, 353, true );
+        add_image_size( 'wp_bootstrap_post-sidebar-thumbnail', 70, 70, true );
 
         /**
          * Register navigation menus.

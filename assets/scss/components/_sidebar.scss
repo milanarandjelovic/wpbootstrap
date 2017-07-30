@@ -1,11 +1,47 @@
+// Search Form Widget
 .search-form {
   margin-top: 20px;
 }
 
+// Categories Widget
 .wp_bootstrap_categories_sidebar {
   padding-left: 0;
 
   .badge-blue {
     background: $badge_blue_color;
+  }
+}
+
+// Popular Posts Widget
+.sidebar-popular-posts {
+  margin: 0;
+  padding-left: 0;
+
+  li {
+    list-style: none;
+    margin-bottom: 20px;
+    min-height: 70px;
+
+    a,
+    a:hover {
+      color: $recent_post_link_color;
+      text-decoration: none;
+    }
+
+    img {
+      float: left;
+      margin-right: 20px;
+    }
+
+    em {
+      font-family: $lato_font;
+      font-size: 12px;
+      color: $recent_post_em_color;
+    }
+
+    p {
+      line-height: normal;
+      margin-bottom: auto;
+    }
   }
 }
