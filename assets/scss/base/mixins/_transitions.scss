@@ -1,0 +1,19 @@
+@mixin transition($val...) {
+  -webkit-transition: $val;
+  transition: $val;
+}
+
+@mixin transition-delay($val) {
+  -webkit-transition-delay: $val;
+  transition-delay: $val;
+}
+
+@mixin transform($val...) {
+  -webkit-transform: $val;
+  transform: $val;
+}
+
+@mixin transform-origin($val) {
+  -webkit-transform-origin: $val;
+  transform-origin: $val;
+}

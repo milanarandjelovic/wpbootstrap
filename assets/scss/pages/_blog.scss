@@ -1,0 +1,26 @@
+.post__holder {
+  .post__title {
+    color: $post_title_color;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+
+  .post__posted_at {
+    font-size: 12px;
+    color: $post_posted_at_color;
+  }
+
+  .post__posted_by {
+    font-size: 12px;
+    color: $post_posted_by_color;
+  }
+
+  .post__content {
+    .more-link {
+      display: block;
+      float: right;
+      text-transform: uppercase;
+      color: #656269;
+    }
+  }
+}

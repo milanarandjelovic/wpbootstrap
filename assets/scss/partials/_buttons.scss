@@ -1,0 +1,17 @@
+.btn-blue {
+  color: $white;
+  background-color: $btn_blue_color;
+  border-color: $btn_blue_color;
+  margin: 4px;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active,
+  .open,
+  .dropdown-toggle.btn-blue {
+    color: $white;
+    background-color: $btb_blue_hover_color;
+    border-color: $btb_blue_hover_color;
+  }
+}

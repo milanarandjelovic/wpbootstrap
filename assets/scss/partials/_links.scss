@@ -1,0 +1,14 @@
+a {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  -webkit-transition: background-color .4s linear, color .4s linear;
+  transition: background-color .4s linear, color .4s linear;
+
+  &,
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: $link_hover_color;
+  }
+}

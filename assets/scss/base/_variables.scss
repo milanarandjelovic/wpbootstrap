@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700,900');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,900');
+
+/*--------------------------------------------------------------
+# Colors
+--------------------------------------------------------------*/
+$white: #FFFFFF;
+$black: #000000;
+
+// Link
+$base_color: #384452;
+$link_hover_color: #01B2FE;
+
+// Navigation
+$navbar_background_color: #384452;
+$navbar_link_color: #00B3FE;
+
+// Header
+$header_wrapper_color: #00B3FE;
+
+// Blog
+$post_title_color: #00B3FE;
+$post_posted_at_color: #B3B3B3;
+$post_posted_by_color: #F39C12;
+
+// Button
+$btn_blue_color: #384452;
+$btb_blue_hover_color: #00B3FE;
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+$raleway_font: 'Raleway', sans-serif;
+$lato_font: 'Lato', sans-serif;
+
+/*--------------------------------------------------------------
+# Animations
+--------------------------------------------------------------*/
+$time: 320ms;
+$time_slow: 700ms;
+
+$swing: cubic-bezier(0.55, 0, 0.1, 1);
+$swift: cubic-bezier(0.4, 0, 0.2, 1);
+$ease: ease;
+
+$transition-default: all $time $ease;
