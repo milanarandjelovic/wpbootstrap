@@ -14,19 +14,19 @@
     <div class="container">
         <div class="row">
             <?php if ( is_active_sidebar( 'wp_bootstrap-footer-left-sidebar' ) ): ?>
-                <div class="col-lg-4">
+                <div class="col-md-4">
                     <?php dynamic_sidebar( 'wp_bootstrap-footer-left-sidebar' ); ?>
                 </div>
             <?php endif; ?>
 
             <?php if ( is_active_sidebar( 'wp_bootstrap-footer-middle-sidebar' ) ): ?>
-                <div class="col-lg-4">
+                <div class="col-md-4">
                     <?php dynamic_sidebar( 'wp_bootstrap-footer-middle-sidebar' ); ?>
                 </div>
             <?php endif; ?>
 
             <?php if ( is_active_sidebar( 'wp_bootstrap-footer-right-sidebar' ) ): ?>
-                <div class="col-lg-4">
+                <div class="col-md-4">
                     <?php dynamic_sidebar( 'wp_bootstrap-footer-right-sidebar' ); ?>
                 </div>
             <?php endif; ?>

@@ -56,7 +56,7 @@ get_header();
 <!-- BLOG POST LIST -->
 <div class="container">
     <div class="row">
-        <div class="col-lg-8">
+        <div class="col-md-8">
             <?php if ( have_posts() ):
                 while ( have_posts() ): the_post(); ?>
                     <div class="post__holder">
@@ -84,10 +84,10 @@ get_header();
                     </div> <!-- /.post__holder -->
                 <?php endwhile;
             endif; ?>
-        </div> <!-- /.col-lg-8 -->
-        <div class="col-lg-4">
+        </div> <!-- /.col-md-8 -->
+        <div class="col-md-4">
             <?php get_sidebar(); ?>
-        </div> <!-- /.col-lg-4 -->
+        </div> <!-- /.col-md-4 -->
     </div> <!-- /.row -->
 </div> <!-- /.container -->
 <!-- /BLOG POST LIST -->
