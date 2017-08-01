@@ -17,6 +17,7 @@ require_once get_template_directory() . '/inc/class/wp-bootstrap-navwalker.php';
  */
 require_once get_template_directory() . '/inc/widgets/widget-categories.php';
 require_once get_template_directory() . '/inc/widgets/widget-recent-posts.php';
+require_once get_template_directory() . '/inc/widgets/widget-popular-tags.php';
 
 if ( ! function_exists( 'wp_bootstrap_setup' ) ):
     /**
