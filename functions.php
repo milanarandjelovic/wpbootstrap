@@ -18,6 +18,7 @@ require_once get_template_directory() . '/inc/class/wp-bootstrap-navwalker.php';
 require_once get_template_directory() . '/inc/widgets/widget-categories.php';
 require_once get_template_directory() . '/inc/widgets/widget-recent-posts.php';
 require_once get_template_directory() . '/inc/widgets/widget-popular-tags.php';
+require_once get_template_directory() . '/inc/widgets/widget-social-links.php';
 
 if ( ! function_exists( 'wp_bootstrap_setup' ) ):
     /**
@@ -67,6 +68,9 @@ endif;
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function wp_bootstrap_widgets_init() {
+    /**
+     * Main Sidebar Widget
+     */
     register_sidebar( array(
         'name'          => esc_html__( 'Sidebar', 'wp_bootstrap' ),
         'id'            => 'wp_bootstrap-sidebar',
@@ -76,6 +80,42 @@ function wp_bootstrap_widgets_init() {
         'after_widget'  => '<div class="spacing"></div>',
         'before_title'  => '<h4>',
         'after_title'   => '</h4><div class="hline"></div>',
+    ) );
+
+    /**
+     * Footer Widget
+     */
+    register_sidebar( array(
+        'name'          => esc_html__( 'Footer Left Sidebar', 'wp_bootstrap' ),
+        'id'            => 'wp_bootstrap-footer-left-sidebar',
+        'description'   => esc_html__( 'Left Sidebar that appears on left side of footer.', 'wp_bootstrap' ),
+        'class'         => '',
+        'before_widget' => '',
+        'after_widget'  => '',
+        'before_title'  => '<h4>',
+        'after_title'   => '</h4><div class="hline-w"></div>',
+    ) );
+
+    register_sidebar( array(
+        'name'          => esc_html__( 'Footer Middle Sidebar', 'wp_bootstrap' ),
+        'id'            => 'wp_bootstrap-footer-middle-sidebar',
+        'description'   => esc_html__( 'Middle Sidebar that appears on middle of footer.', 'wp_bootstrap' ),
+        'class'         => '',
+        'before_widget' => '',
+        'after_widget'  => '',
+        'before_title'  => '<h4>',
+        'after_title'   => '</h4><div class="hline-w"></div>',
+    ) );
+
+    register_sidebar( array(
+        'name'          => esc_html__( 'Footer Right Sidebar', 'wp_bootstrap' ),
+        'id'            => 'wp_bootstrap-footer-right-sidebar',
+        'description'   => esc_html__( 'Right Sidebar that appears on right side of footer.', 'wp_bootstrap' ),
+        'class'         => '',
+        'before_widget' => '',
+        'after_widget'  => '',
+        'before_title'  => '<h4>',
+        'after_title'   => '</h4><div class="hline-w"></div>',
     ) );
 }
 
