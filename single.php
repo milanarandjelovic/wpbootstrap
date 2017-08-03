@@ -12,15 +12,7 @@ get_header();
 
 <?php get_template_part( 'template-parts/header/navigation' ); ?>
 
-<?php if ( ! is_front_page() ): ?>
-    <div class="header__wrapper">
-        <div class="container">
-            <div class="row">
-                <h3 class="header__title"><?php wp_title( '', 'true' ); ?></h3>
-            </div> <!-- /.row -->
-        </div> <!-- /.container -->
-    </div> <!-- /.header__wrapper -->
-<?php endif; ?>
+<?php get_template_part( 'template-parts/header/header-wrapper' ); ?>
 
 <div class="container">
     <div class="row">
