@@ -34,40 +34,43 @@ class WP_Bootstrap_Comment_Walker extends Walker_Comment {
             </div>
         <?php endif; ?>
 
-        <div class="media-body" id="div-comment-<?php comment_ID(); ?>">
+        <div class="media-body panel panel-default" id="div-comment-<?php comment_ID(); ?>">
 
-            <?php printf( '<h4 class="media-heading">%s</h4>', get_comment_author_link() ); ?>
+            <div class="panel-heading">
+                <?php printf( '<span class="media-heading">%s</span>', get_comment_author_link() ); ?>
 
-            <div class="comment-metadata">
-                <a href="<?php echo esc_url( get_comment_link( $comment->comment_ID, $args ) ); ?>">
-                    <time datetime="<?php comment_time( 'c' ); ?>">
-                        <?php printf( _x( '%1$s at %2$s', '1: date, 2: time' ), get_comment_date(), get_comment_time() ); ?>
-                    </time>
-                </a>
-            </div><!-- .comment-metadata -->
+                <span class="comment-metadata pull-right">
+                    <a href="<?php echo esc_url( get_comment_link( $comment->comment_ID, $args ) ); ?>">
+                        <time datetime="<?php comment_time( 'c' ); ?>">
+                            <?php printf( _x( '%1$s at %2$s', '1: date, 2: time' ), get_comment_date(), get_comment_time() ); ?>
+                        </time>
+                    </a>
+                </span><!-- .comment-metadata -->
+            </div>
 
             <?php if ( '0' == $comment->comment_approved ) : ?>
                 <p class="comment-awaiting-moderation label label-info"><?php _e( 'Your comment is awaiting moderation.' ); ?></p>
             <?php endif; ?>
 
-            <div class="comment-content">
+            <div class="comment-content panel-body">
                 <?php comment_text(); ?>
+
+                <ul class="list-inline">
+                    <?php edit_comment_link( __( 'Edit' ), '<li class="edit-link">', '</li>' ); ?>
+
+                    <?php
+                    comment_reply_link( array_merge( $args, array(
+                        'add_below' => 'div-comment',
+                        'depth'     => $depth,
+                        'max_depth' => $args['max_depth'],
+                        'before'    => '<li class="reply-link">',
+                        'after'     => '</li>',
+                    ) ) );
+                    ?>
+
+                </ul>
             </div><!-- .comment-content -->
 
-            <ul class="list-inline">
-                <?php edit_comment_link( __( 'Edit' ), '<li class="edit-link">', '</li>' ); ?>
-
-                <?php
-                comment_reply_link( array_merge( $args, array(
-                    'add_below' => 'div-comment',
-                    'depth'     => $depth,
-                    'max_depth' => $args['max_depth'],
-                    'before'    => '<li class="reply-link">',
-                    'after'     => '</li>',
-                ) ) );
-                ?>
-
-            </ul>
 
         </div>
         <?php

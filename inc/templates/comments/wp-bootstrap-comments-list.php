@@ -1,5 +1,5 @@
 <!-- COMMENT LIST-->
-<ul class="list-unstyled wp_bootstra_comment">
+<ul class="list-unstyled wp_bootstrap_comment">
     <?php
     // Get comments for post
     $comments = get_comments( array(

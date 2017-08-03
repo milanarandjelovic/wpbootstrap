@@ -37,9 +37,15 @@ $badge_blue_color: #00B3FE;
 $recent_post_link_color: #2F2F2F;
 $recent_post_em_color: #B3B3B3;
 
-/*--------------------------------------------------------------
-# Typography
---------------------------------------------------------------*/
+// Post Comments
+$comment_metadata_color: #999;
+$comment_reply_link_color: #FF9D1D;
+$comment_reply_link_hover_color: #F56B08;
+$post_navigation_link_hover_color: #FF9D1D;
+
+  /*--------------------------------------------------------------
+  # Typography
+  --------------------------------------------------------------*/
 $raleway_font: 'Raleway', sans-serif;
 $lato_font: 'Lato', sans-serif;
 
