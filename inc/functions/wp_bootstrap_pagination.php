@@ -71,7 +71,7 @@ function wp_bootstrap_pagination( $args = array() ) {
     $firstpage = esc_attr( get_pagenum_link( 1 ) );
 
     if ( $firstpage && ( 1 != $page ) ):
-        $echo .= '<li class="previous"><a href="' . $firstpage . '">' . __( 'First', 'wp_bootstrap' ) . '</a></li>';
+        $echo .= '<li class="previous"><a href="' . $firstpage . '">' . __( '<i class="fa fa-angle-double-left"></i>', 'wp_bootstrap' ) . '</a></li>';
     endif;
 
     if ( $previous && ( 1 != $page ) ):
@@ -81,9 +81,9 @@ function wp_bootstrap_pagination( $args = array() ) {
     if ( ! empty( $min ) && ! empty( $max ) ):
         for ( $i = $min; $i <= $max; $i ++ ):
             if ( $page == $i ) :
-                $echo .= '<li class="active"><span class="active">' . str_pad( (int) $i, 2, '0', STR_PAD_LEFT ) . '</span></li>';
+                $echo .= '<li class="active"><span class="active">' . str_pad( (int) $i, 1, '0', STR_PAD_LEFT ) . '</span></li>';
             else:
-                $echo .= sprintf( '<li><a href="%s">%002d</a></li>', esc_attr( get_pagenum_link( $i ) ), $i );
+                $echo .= sprintf( '<li><a href="%s">%d</a></li>', esc_attr( get_pagenum_link( $i ) ), $i );
             endif;
         endfor;
     endif;
@@ -98,7 +98,7 @@ function wp_bootstrap_pagination( $args = array() ) {
     $lastpage = esc_attr( get_pagenum_link( $count ) );
 
     if ( $lastpage ):
-        $echo .= '<li class="next"><a href="' . $lastpage . '">' . __( 'Last', 'wp_bootstrap' ) . '</a></li>';
+        $echo .= '<li class="next"><a href="' . $lastpage . '">' . __( '<i class="fa fa-angle-double-right"></i>', 'wp_bootstrap' ) . '</a></li>';
     endif;
 
     if ( isset( $echo ) ):

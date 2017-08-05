@@ -40,8 +40,8 @@ add_filter( 'excerpt_more', 'wp_bootstrap_excerpt_more' );
  * Display navigation to next/previous set of post when applicable.
  */
 function wp_bootstrap_paging_nav( $args ) {
-    $args['previous_string'] = 'previous';
-    $args['next_string']     = 'next';
+    $args['previous_string'] = '<i class="fa fa-angle-left"></i>';
+    $args['next_string']     = '<i class="fa fa-angle-right"></i>';
 
     return $args;
 }
