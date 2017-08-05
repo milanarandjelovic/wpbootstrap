@@ -6,6 +6,7 @@
 --------------------------------------------------------------*/
 $white: #FFFFFF;
 $black: #000000;
+$background_color: #F1F2F4;
 
 // Link
 $base_color: #384452;
@@ -38,10 +39,16 @@ $recent_post_link_color: #2F2F2F;
 $recent_post_em_color: #B3B3B3;
 
 // Post Comments
-$comment_metadata_color: #999;
+$comment_metadata_color: #999999;
 $comment_reply_link_color: #FF9D1D;
 $comment_reply_link_hover_color: #F56B08;
 $post_navigation_link_hover_color: #FF9D1D;
+
+// Pagination
+$pagination_background_color: #E6E8EC;
+$pagination_color: #4D306E;
+$pagination_border_color: #D2D2DD;
+$pagination_active_background_color: #F56B08;
 
   /*--------------------------------------------------------------
   # Typography
