@@ -22,38 +22,29 @@ get_header();
 <!-- BLOG POST LIST -->
 <div class="container">
     <div class="row">
+
         <div class="col-md-8">
-            <?php if ( have_posts() ):
-                while ( have_posts() ): the_post(); ?>
-                    <div class="post__holder">
-                        <?php if ( has_post_thumbnail() ):
-                            the_post_thumbnail( 'wp_bootstrap_post-thumbnail', array(
-                                'class' => 'img-responsive',
-                            ) );
-                        endif; ?>
-                        <a href="<?php the_permalink(); ?>">
-                            <h3 class="post__title"><?php the_title(); ?></h3>
-                        </a>
-                        <p>
-                            <small class="post__posted_at">Posted: <?php echo get_the_date(); ?></small>
-                            |
-                            <small class="post__posted_by">By: <?php the_author() ?>
-                                - <?php comments_number(); ?></small>
-                        </p>
-                        <div class="post__content">
-                            <?php the_excerpt(); ?>
-                        </div> <!-- /.post_content -->
-                        <?php if ( ! is_singular() ): ?>
-                            <div class="hline"></div>
-                        <?php endif; ?>
-                        <div class="spacing"></div>
-                    </div> <!-- /.post__holder -->
-                <?php endwhile;
-            endif; ?>
+            <?php if ( have_posts() ): ?>
+                <?php while ( have_posts() ): the_post(); ?>
+                    <?php
+                    /*
+					 * Include the Post-Format-specific template for the content.
+					 * If you want to override this in a child theme, then include a file
+					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+					 */
+                    get_template_part( 'template-parts/posts/content', get_post_format() );
+                    ?>
+                <?php endwhile; ?>
+            <?php else: ?>
+                <?php get_template_part( 'template-parts/posts/content', 'none' ); ?>
+            <?php endif; ?>
+
         </div> <!-- /.col-md-8 -->
+
         <div class="col-md-4">
             <?php get_sidebar(); ?>
         </div> <!-- /.col-md-4 -->
+
     </div> <!-- /.row -->
 </div> <!-- /.container -->
 <!-- /BLOG POST LIST -->
