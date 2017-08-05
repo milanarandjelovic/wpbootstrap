@@ -35,6 +35,9 @@ get_header();
                     get_template_part( 'template-parts/posts/content', get_post_format() );
                     ?>
                 <?php endwhile; ?>
+
+                <?php wp_bootstrap_pagination(); ?>
+
             <?php else: ?>
                 <?php get_template_part( 'template-parts/posts/content', 'none' ); ?>
             <?php endif; ?>
