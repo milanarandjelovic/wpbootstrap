@@ -1,6 +1,6 @@
 <?php
 
-if ( ! function_exists( 'wp_bootstrap_setup' ) ):
+if ( ! function_exists( 'wp_bootstrap_setup' ) ) :
     /**
      * Sets up theme defaults and registers support for various WordPress features.
      *
@@ -9,6 +9,12 @@ if ( ! function_exists( 'wp_bootstrap_setup' ) ):
      * as indicating support for post thumbnails.
      */
     function wp_bootstrap_setup() {
+
+        /*
+     * Add Redux Framework
+     */
+        require get_template_directory() . '/inc/admin/admin-init.php';
+
         /**
          * Let WordPress manage the document title.
          * By adding theme support, we declare that this theme does not use a
@@ -25,8 +31,11 @@ if ( ! function_exists( 'wp_bootstrap_setup' ) ):
          * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
          */
         add_theme_support( 'post-thumbnails' );
-        add_image_size( 'wp_bootstrap_post-thumbnail', 750, 353, true );
-        add_image_size( 'wp_bootstrap_post-sidebar-thumbnail', 70, 70, true );
+        set_post_thumbnail_size( 370, 270, true ); // Normal post thumbnails
+        add_image_size( 'wp_bootstrap_post-thumbnail-lg', 870, 500, true ); // Large post thumbnails
+        add_image_size( 'wp_bootstrap_post-sidebar-thumbnail', 70, 70, true ); // Recent Post thumbnails
+        add_image_size( 'wp_bootstrap-thumbnail-sm', 100, 100, true ); // Small thumbnail
+        add_image_size( 'wp_bootstrap-thumbnail-md', 170, 170, true ); // Medium thumbnail
         // Portfolio image
         add_image_size( 'wp_bootstrap_portfolio-single-project', 945, 433, true );
         add_image_size( 'wp_bootstrap_portfolio-thumbnail-project', 380, 285, true );
