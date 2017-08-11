@@ -23,11 +23,12 @@ require_once get_template_directory() . '/inc/widgets/widget-categories.php';
 require_once get_template_directory() . '/inc/widgets/widget-recent-posts.php';
 require_once get_template_directory() . '/inc/widgets/widget-popular-tags.php';
 require_once get_template_directory() . '/inc/widgets/widget-social-links.php';
+require_once get_template_directory() . '/inc/widgets/widget-page.php';
 
 /**
  * Include custom post type
  */
-// require_once get_template_directory() . '/inc/post-types/post-type-portfolio.php';
+require_once get_template_directory() . '/inc/post-types/post-type-features.php';
 
 /**
  * Include theme setup function

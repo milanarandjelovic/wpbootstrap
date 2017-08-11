@@ -32,7 +32,7 @@ if ( ! function_exists( 'wp_bootstrap_setup' ) ) :
          */
         add_theme_support( 'post-thumbnails' );
         set_post_thumbnail_size( 370, 270, true ); // Normal post thumbnails
-        add_image_size( 'wp_bootstrap_post-thumbnail-lg', 870, 500, true ); // Large post thumbnails
+        add_image_size( 'wp_bootstrap_post-thumbnail-lg', 870, 600, true ); // Large post thumbnails
         add_image_size( 'wp_bootstrap_post-sidebar-thumbnail', 70, 70, true ); // Recent Post thumbnails
         add_image_size( 'wp_bootstrap-thumbnail-sm', 100, 100, true ); // Small thumbnail
         add_image_size( 'wp_bootstrap-thumbnail-md', 170, 170, true ); // Medium thumbnail
@@ -103,7 +103,7 @@ function wp_bootstrap_widgets_init() {
     ) );
 
     /**
-     * Footer Widget
+     * Footer Widgets
      */
     register_sidebar( array(
         'name'          => esc_html__( 'Footer Left Sidebar', 'wp_bootstrap' ),
@@ -131,6 +131,42 @@ function wp_bootstrap_widgets_init() {
         'name'          => esc_html__( 'Footer Right Sidebar', 'wp_bootstrap' ),
         'id'            => 'wp_bootstrap-footer-right-sidebar',
         'description'   => esc_html__( 'Right Sidebar that appears on right side of footer.', 'wp_bootstrap' ),
+        'class'         => '',
+        'before_widget' => '',
+        'after_widget'  => '',
+        'before_title'  => '<h4>',
+        'after_title'   => '</h4><div class="hline-w"></div>',
+    ) );
+
+    /**
+     * Home Widgets
+     */
+    register_sidebar( array(
+        'name'          => esc_html__( 'Home Left Sidebar', 'wp_bootstrap' ),
+        'id'            => 'wp_bootstrap-home-left-sidebar',
+        'description'   => esc_html__( 'Left Sidebar that appears on left side of home page.', 'wp_bootstrap' ),
+        'class'         => '',
+        'before_widget' => '',
+        'after_widget'  => '',
+        'before_title'  => '<h4>',
+        'after_title'   => '</h4><div class="hline-w"></div>',
+    ) );
+
+    register_sidebar( array(
+        'name'          => esc_html__( 'Home Middle Sidebar', 'wp_bootstrap' ),
+        'id'            => 'wp_bootstrap-home-middle-sidebar',
+        'description'   => esc_html__( 'Left Sidebar that appears on middle side of home page.', 'wp_bootstrap' ),
+        'class'         => '',
+        'before_widget' => '',
+        'after_widget'  => '',
+        'before_title'  => '<h4>',
+        'after_title'   => '</h4><div class="hline-w"></div>',
+    ) );
+
+    register_sidebar( array(
+        'name'          => esc_html__( 'Home Right Sidebar', 'wp_bootstrap' ),
+        'id'            => 'wp_bootstrap-home-right-sidebar',
+        'description'   => esc_html__( 'Right Sidebar that appears on right side of home page.', 'wp_bootstrap' ),
         'class'         => '',
         'before_widget' => '',
         'after_widget'  => '',
