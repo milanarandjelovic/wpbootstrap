@@ -7,6 +7,9 @@
 $white: #FFFFFF;
 $black: #000000;
 $background_color: #F1F2F4;
+$dark-grey : #333333;
+$light-grey : #898989;
+$lighter-grey : #F1F1F1;
 
 // Link
 $base_color: #384452;
@@ -26,12 +29,14 @@ $footer_icon_hover: #00B3FE;
 
 // Blog
 $post_title_color: #00B3FE;
+$post_h_f_border_color: #D2D2DD;
 $post_posted_at_color: #B3B3B3;
 $post_posted_by_color: #F39C12;
 
 // Button
 $btn_blue_color: #384452;
-$btb_blue_hover_color: #00B3FE;
+$btn_light_blue_color: #5AB6F7;
+$btn_blue_hover_color: #00B3FE;
 
 // Sidebar
 $badge_blue_color: #00B3FE;
@@ -48,11 +53,11 @@ $post_navigation_link_hover_color: #FF9D1D;
 $pagination_background_color: #E6E8EC;
 $pagination_color: #4D306E;
 $pagination_border_color: #D2D2DD;
-$pagination_active_background_color: #F56B08;
+$pagination_active_background_color: #5AB6F7;
 
-  /*--------------------------------------------------------------
-  # Typography
-  --------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
 $raleway_font: 'Raleway', sans-serif;
 $lato_font: 'Lato', sans-serif;
 

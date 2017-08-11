@@ -1,27 +1,136 @@
-.post__holder {
-  .post__title {
-    color: $post_title_color;
-    font-weight: 700;
-    margin-bottom: 15px;
-  }
+.entry-header {
+  .post-header-container {
+    padding: 15px 20px;
+    border-bottom: 1px dashed $post_h_f_border_color;
+    color: $light-grey;
+    background-color: $background_color;
+    text-transform: uppercase;
 
-  .post__posted_at {
-    font-size: 12px;
-    color: $post_posted_at_color;
-  }
-
-  .post__posted_by {
-    font-size: 12px;
-    color: $post_posted_by_color;
-  }
-
-  .post__content {
-    .more-link-holder {
-      float: right;
-      display: block;
-      .more-link {
-        text-transform: uppercase;
+    a {
+      color: $light-grey;
+      display: inline-block;
+      font-size: 12px;
+      &:hover,
+      &:focus {
+        color: $dark-grey;
       }
+    }
+
+    .author-link {
+      .fa {
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+.entry-footer {
+  .post-footer-container {
+    padding: 15px 20px;
+    border-top: 1px dashed $post_h_f_border_color;
+    color: $light-grey;
+    background-color: $background_color;
+    text-transform: uppercase;
+
+    a {
+      color: $light-grey;
+      display: inline-block;
+      font-size: 12px;
+      &:hover,
+      &:focus {
+        color: $dark-grey;
+      }
+    }
+
+    .tags-list {
+      .fa {
+        margin-right: 10px;
+      }
+      a {
+        padding: 0 4px;
+      }
+    }
+
+    .comments-link {
+      .fa {
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+/*--------------------------------------------------------------
+# Standard Post Format
+--------------------------------------------------------------*/
+.post {
+  &__holder {
+    border: 1px solid #d2d2dd;
+    background: #f8f9fa;
+    margin-bottom: 20px;
+
+    .entry-body {
+      padding: 0 20px 20px 20px;
+
+      .post-thumbnail {
+        padding: 0;
+
+        .entry-thumbnail {
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+
+      .content {
+      }
+    }
+  }
+}
+
+/*--------------------------------------------------------------
+# Quote Post Format
+--------------------------------------------------------------*/
+.wp_bootstrap_quote_holder {
+  .entry-header {
+    .quote-content {
+      font-size: 42px;
+      font-weight: 100;
+      line-height: 1.3em;
+      letter-spacing: 0.03em;
+
+      blockquote {
+        border: none;
+      }
+
+      &:before,
+      &:after {
+        content: '';
+        display: inline-block;
+        position: relative;
+        color: #ccc;
+      }
+      &:before {
+        content: '“';
+        float: left;
+      }
+      &:after {
+        content: '„';
+        float: right;
+        margin-bottom: 20px;
+      }
+
+      @media (max-width: 767px) {
+        font-size: 20px;
+      }
+    }
+
+    .quote-author {
+      color: #898989;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      margin-top: 10px;
+      margin-bottom: 30px;
     }
   }
 }
