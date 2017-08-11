@@ -6,42 +6,55 @@
  *
  * @package WPBootstrap
  */
+
+if ( has_post_thumbnail() ):
+    $post_thumbnail_class    = 'col-md-5';
+    $post_body_content_class = 'col-md-7';
+else:
+    $post_thumbnail_class    = '';
+    $post_body_content_class = 'col-md-12 col-sm-12';
+endif;
 ?>
 
-<article id="<?php the_ID(); ?>" <?php post_class( 'post__holder ' ); ?>>
+<article id="<?php the_ID(); ?>" <?php post_class( 'post__holder' ); ?>>
 
-    <?php if ( has_post_thumbnail() ): ?>
-        <figure class="entry-thumbnail">
-            <a href="<?php the_permalink(); ?>">
-                <?php the_post_thumbnail( 'wp_bootstrap_post-thumbnail', array(
-                    'class' => 'img-responsive',
-                ) ); ?>
-            </a>
-        </figure>
-    <?php endif; ?>
+    <header class="entry-header">
+        <?php echo wp_bootstrap_post_meta(); ?>
+    </header> <!-- /.entry-header -->
+
 
     <div class="entry-body">
-        <a href="<?php the_permalink(); ?>">
-            <h3 class="post__title"><?php the_title(); ?></h3>
-        </a>
+        <div class="row">
+            <div class="<?php echo $post_thumbnail_class; ?> post-thumbnail">
+                <?php if ( has_post_thumbnail() ): ?>
+                    <figure class="entry-thumbnail">
+                        <a href="<?php the_permalink(); ?>">
+                            <?php the_post_thumbnail(); ?>
+                        </a>
+                    </figure>
+                <?php endif; ?>
+            </div>
 
-        <p>
-            <small class="post__posted_at">Posted: <?php echo get_the_date(); ?></small>
-            |
-            <small class="post__posted_by">By: <?php the_author() ?>
-                - <?php comments_number(); ?></small>
-        </p>
+            <div class="<?php echo $post_body_content_class; ?>  content">
+                <a href="<?php the_permalink(); ?>">
+                    <h3 class="post__title"><?php the_title(); ?></h3>
+                </a>
 
-        <div class="entry-excerpt post__content">
-            <?php the_excerpt(); ?>
-        </div> <!-- /.post_content -->
+                <div class="entry-excerpt post__content">
+                    <?php the_excerpt(); ?>
+                </div> <!-- /.post__content -->
 
-        <?php if ( ! is_singular() ): ?>
-            <div class="hline"></div>
-        <?php endif; ?>
+                <div class="post__read-more pull-right">
+                    <a href="<?php the_permalink(); ?>" class="btn btn-light-blue"><?php _e( 'Read More' ); ?></a>
+                </div> <!-- /.post__read-more -->
 
-        <div class="spacing"></div>
-
+            </div>
+        </div>
     </div> <!-- /.entry-body -->
+
+
+    <footer class="entry-footer">
+        <?php echo wp_bootstrap_post_footer(); ?>
+    </footer> <!-- /.entry-footer -->
 
 </article> <!-- /.post__holder -->
