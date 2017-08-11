@@ -124,7 +124,7 @@ class WP_Bootstrap_Widget_One_Page extends WP_Widget {
                     foreach ( $getAllPages as $page ):
                         ?>
                         <option value="<?php echo $page->ID; ?>"
-                            <?php selected( $page->ID, $currentPage, true, 'selected' ); ?>
+                            <?php selected( $page->ID, $currentPage, true ); ?>
                         >
                             <?php echo $page->post_title; ?>
                         </option>
