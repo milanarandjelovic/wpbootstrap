@@ -2,7 +2,7 @@
 /**
  * Template Name: Home page
  *
- * The template for displaying hom page.
+ * The template for displaying home page.
  *
  * @link    https://codex.wordpress.org/Template_Hierarchy
  *
