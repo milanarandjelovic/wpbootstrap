@@ -17,6 +17,11 @@ require_once get_template_directory() . '/inc/class/wp-bootstrap-navwalker.php';
 require_once get_template_directory() . '/inc/class/wp-bootstrap-comment-walker.php';
 
 /**
+ * Add custom attachment fields.
+ */
+require_once get_template_directory() . '/inc/functions/function-attachments.php';
+
+/**
  * Include custom widgets
  */
 require_once get_template_directory() . '/inc/widgets/widget-categories.php';

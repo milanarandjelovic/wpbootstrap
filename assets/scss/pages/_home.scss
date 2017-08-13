@@ -117,3 +117,17 @@
     color: $white;
   }
 }
+
+/*--------------------------------------------------------------
+# Clients
+--------------------------------------------------------------*/
+#clients-wrap {
+  background: $clients_background_color;
+  margin-top: 0;
+  padding-top: 80px;
+  padding-bottom: 100px;
+
+  h3 {
+    margin-bottom: 60px;
+  }
+}

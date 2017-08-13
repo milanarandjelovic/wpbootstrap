@@ -149,7 +149,7 @@ function wp_bootstrap_widgets_init() {
         'before_widget' => '',
         'after_widget'  => '',
         'before_title'  => '<h4>',
-        'after_title'   => '</h4><div class="hline-w"></div>',
+        'after_title'   => '</h4><div class="hline"></div>',
     ) );
 
     register_sidebar( array(
@@ -160,7 +160,7 @@ function wp_bootstrap_widgets_init() {
         'before_widget' => '',
         'after_widget'  => '',
         'before_title'  => '<h4>',
-        'after_title'   => '</h4><div class="hline-w"></div>',
+        'after_title'   => '</h4><div class="hline"></div>',
     ) );
 
     register_sidebar( array(
@@ -171,7 +171,7 @@ function wp_bootstrap_widgets_init() {
         'before_widget' => '',
         'after_widget'  => '',
         'before_title'  => '<h4>',
-        'after_title'   => '</h4><div class="hline-w"></div>',
+        'after_title'   => '</h4><div class="hline"></div>',
     ) );
 }
 
