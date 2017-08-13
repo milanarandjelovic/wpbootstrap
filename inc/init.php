@@ -32,6 +32,7 @@ require_once get_template_directory() . '/inc/widgets/widget-faq.php';
  */
 require_once get_template_directory() . '/inc/post-types/post-type-features.php';
 require_once get_template_directory() . '/inc/post-types/post-type-faq.php';
+require_once get_template_directory() . '/inc/post-types/post-type-testimonials.php';
 
 /**
  * Include theme setup function

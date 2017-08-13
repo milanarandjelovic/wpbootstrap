@@ -124,3 +124,23 @@ function wp_bootstrap_get_post_comments_list() {
 function wp_bootstrap_get_post_from() {
     require get_template_directory() . '/inc/templates/comments/wp-bootstrap-comments-form.php';
 }
+
+/**
+ * Return testimonial.
+ *
+ * @param $testimonial
+ */
+function wp_bootstrap_the_testimonial( $testimonial ) {
+    ?>
+    <p><?php echo strip_tags( $testimonial->post_content ); ?></p>
+    <h4><?php echo $testimonial->post_title; ?></h4>
+    <?php
+    $post_id   = $testimonial->ID;
+    $clientWeb = get_post_meta( $post_id, '_wp_bootstrap_testimonial_web', true );
+    $client    = '';
+
+    $client .= $clientWeb;
+    ?>
+    <p><?php echo $client; ?></p>
+    <?php
+}
