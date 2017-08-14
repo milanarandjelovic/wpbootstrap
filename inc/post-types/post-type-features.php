@@ -36,6 +36,7 @@ function wp_bootstrap_cpt_features() {
         'supports'            => array( 'title', 'editor', 'author', 'thumbnail', ),
         'hierarchical'        => false,
         'public'              => true,
+        'menu_icon'           => 'dashicons-lightbulb',
         'show_ui'             => true,
         'show_in_menu'        => true,
         'show_in_nav_menus'   => true,
@@ -53,6 +54,11 @@ function wp_bootstrap_cpt_features() {
 
 add_action( 'init', 'wp_bootstrap_cpt_features' );
 
+/**
+ * Function that fills the box with the desired content.
+ *
+ * @param  post $post The post object.
+ */
 function wp_bootstrap_cpt_feature_html( $post ) {
     wp_nonce_field( 'wp_bootstrap_feature_cpt_metabox', 'wp_bootstrap_feature_metabox_nonce' );
 
@@ -60,35 +66,65 @@ function wp_bootstrap_cpt_feature_html( $post ) {
     $featureShow  = get_post_meta( $post->ID, '_wp_bootstrap_feature_show', true );
     $featureIcon  = get_post_meta( $post->ID, '_wp_bootstrap_feature_icon', true );
     ?>
-    <p>
-        <label for="wp_bootstrap_icon">
-            <?php _e( 'Feature Icon', 'wp_bootstrap' ); ?>
-        </label>
-        <input type="text" id="wp_bootstrap_icon" name="wp_bootstrap_icon"
-               value="<?php echo esc_attr( $featureIcon ); ?>"
-        >
-    </p>
-
-    <p>
-        <label for="wp_bootstrap_order">
-            <?php _e( 'Order on Web', 'wp_bootstrap' ); ?>
-        </label>
-        <input type="text" id="wp_bootstrap_order" name="wp_bootstrap_order"
-               value="<?php echo esc_attr( $featureOrder ); ?>"
-        >
-    </p>
-
-    <p>
-        <label for="wp_bootstrap_show"><?php _e( 'Show on Web', 'wp_bootstrap' ); ?></label>
-        <input type="radio" id="wp_bootstrap_show" name="wp_bootstrap_show"
-               value="No" <?php echo checked( "No", $featureShow, false ); ?>
-        />No<br>
-        <input type="radio" id="wp_bootstrap_show" name="wp_bootstrap_show"
-               value="Yes" <?php echo checked( "Yes", $featureShow, false ); ?>
-        />Yes</p>
+    <table class="form-table">
+        <tbody>
+        <tr>
+            <th>
+                <label for="wp_bootstrap_icon">
+                    <?php _e( 'Feature Icon', 'wp_bootstrap' ); ?>
+                </label>
+            </th>
+            <td>
+                <input type="text" id="wp_bootstrap_icon"
+                       name="wp_bootstrap_icon"
+                       value="<?php echo esc_attr( $featureIcon ); ?>"
+                       class="regular-text"
+                >
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <label for="wp_bootstrap_order">
+                    <?php _e( 'Order on Web', 'wp_bootstrap' ); ?>
+                </label>
+            </th>
+            <td>
+                <input type="text" id="wp_bootstrap_order"
+                       name="wp_bootstrap_order"
+                       value="<?php echo esc_attr( $featureOrder ); ?>"
+                       class="regular-text"
+                >
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <label for="">
+                    <?php _e( 'Show on Web', 'wp_bootstrap' ); ?>
+                </label>
+            </th>
+            <td>
+                <input type="radio" id="wp_bootstrap_show"
+                       name="wp_bootstrap_show"
+                       value="No" <?php echo checked( "No", $featureShow, false ); ?>
+                       class="regular-text"
+                />No <br>
+                <input type="radio" id="wp_bootstrap_show"
+                       name="wp_bootstrap_show"
+                       value="Yes" <?php echo checked( "Yes", $featureShow, false ); ?>
+                       class="regular-text"
+                />Yes
+            </td>
+        </tr>
+        </tbody>
+    </table>
     <?php
 }
 
+/**
+ * The hook allows meta box registration for any post type.
+ *
+ * @link https://codex.wordpress.org/Plugin_API/Action_Reference/add_meta_boxes
+ */
 function wp_bootstrap_feature_add_metabox() {
     add_meta_box(
         'feature',
@@ -102,6 +138,11 @@ function wp_bootstrap_feature_add_metabox() {
 
 add_action( 'add_meta_boxes', 'wp_bootstrap_feature_add_metabox' );
 
+/**
+ * Save feature post meta.
+ *
+ * @param int $post_id The post ID.
+ */
 function wp_bootstrap_feature_metabox_save( $post_id ) {
     /**
      * We need to verify this came from our screen and with proper authorization,

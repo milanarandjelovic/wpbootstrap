@@ -36,6 +36,7 @@ function wp_bootstrap_cpt_testimonial() {
         'supports'            => array( 'title', 'editor', 'author', 'thumbnail', ),
         'hierarchical'        => false,
         'public'              => true,
+        'menu_icon'           => 'dashicons-format-status',
         'show_ui'             => true,
         'show_in_menu'        => true,
         'show_in_nav_menus'   => true,
@@ -53,31 +54,57 @@ function wp_bootstrap_cpt_testimonial() {
 
 add_action( 'init', 'wp_bootstrap_cpt_testimonial' );
 
+/**
+ * Function that fills the box with the desired content.
+ *
+ * @param  post $post The post object.
+ */
 function wp_bootstrap_cpt_testimonial_html( $post ) {
     wp_nonce_field( 'wp_bootstrap_testimonial_cpt_metabox', 'wp_bootstrap_testimonial_metabox_nonce' );
 
     $clientPosition = get_post_meta( $post->ID, '_wp_bootstrap_testimonial_position', true );
     $clientWeb      = get_post_meta( $post->ID, '_wp_bootstrap_testimonial_web', true );
     ?>
-    <p>
-        <label for="wp_bootstrap_testimonial_position">
-            <?php _e( 'Client Position', 'wp_bootstrap' ); ?>
-        </label>
-        <input type="text" id="wp_bootstrap_testimonial_position" name="wp_bootstrap_testimonial_position"
-               value="<?php echo esc_attr( $clientPosition ); ?>"
-        >
-    </p>
-    <p>
-        <label for="wp_bootstrap_testimonial_web">
-            <?php _e( 'Client Web', 'wp_bootstrap' ); ?>
-        </label>
-        <input type="text" id="wp_bootstrap_testimonial_web" name="wp_bootstrap_testimonial_web"
-               value="<?php echo esc_attr( $clientWeb ); ?>"
-        >
-    </p>
+    <table class="form-table">
+        <tbody>
+        <tr>
+            <th>
+                <label for="wp_bootstrap_testimonial_position">
+                    <?php _e( 'Client Position', 'wp_bootstrap' ); ?>
+                </label>
+            </th>
+            <td>
+                <input type="text" id="wp_bootstrap_testimonial_position"
+                       name="wp_bootstrap_testimonial_position"
+                       value="<?php echo esc_attr( $clientPosition ); ?>"
+                       class="regular-text"
+                >
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <label for="wp_bootstrap_testimonial_web">
+                    <?php _e( 'Client Web', 'wp_bootstrap' ); ?>
+                </label>
+            </th>
+            <td>
+                <input type="text" id="wp_bootstrap_testimonial_web"
+                       name="wp_bootstrap_testimonial_web"
+                       value="<?php echo esc_attr( $clientWeb ); ?>"
+                       class="regular-text"
+                >
+            </td>
+        </tr>
+        </tbody>
+    </table>
     <?php
 }
 
+/**
+ * The hook allows meta box registration for any post type.
+ *
+ * @link https://codex.wordpress.org/Plugin_API/Action_Reference/add_meta_boxes
+ */
 function wp_bootstrap_testimonial_add_metabox() {
     add_meta_box(
         'testimonial-client',
@@ -91,6 +118,11 @@ function wp_bootstrap_testimonial_add_metabox() {
 
 add_action( 'add_meta_boxes', 'wp_bootstrap_testimonial_add_metabox' );
 
+/**
+ * Save testimonial post meta.
+ *
+ * @param int $post_id The post ID.
+ */
 function wp_bootstrap_testimonial_metabox_save( $post_id ) {
     /**
      * We need to verify this came from our screen and with proper authorization,

@@ -36,6 +36,7 @@ function wp_bootstrap_cpt_faq() {
         'supports'            => array( 'title', 'editor', 'author', 'thumbnail', ),
         'hierarchical'        => false,
         'public'              => true,
+        'menu_icon'           => 'dashicons-welcome-write-blog',
         'show_ui'             => true,
         'show_in_menu'        => true,
         'show_in_nav_menus'   => true,

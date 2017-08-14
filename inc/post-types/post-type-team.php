@@ -36,6 +36,7 @@ function wp_bootstrap_cpt_team() {
         'supports'            => array( 'title', 'editor', 'thumbnail' ),
         'hierarchical'        => false,
         'public'              => true,
+        'menu_icon'           => 'dashicons-groups',
         'show_ui'             => true,
         'show_in_menu'        => true,
         'show_in_nav_menus'   => true,
