@@ -11,8 +11,8 @@ if ( ! function_exists( 'wp_bootstrap_setup' ) ) :
     function wp_bootstrap_setup() {
 
         /*
-     * Add Redux Framework
-     */
+         * Add Redux Framework
+         */
         require get_template_directory() . '/inc/admin/admin-init.php';
 
         /**
@@ -37,8 +37,8 @@ if ( ! function_exists( 'wp_bootstrap_setup' ) ) :
         add_image_size( 'wp_bootstrap-thumbnail-sm', 100, 100, true ); // Small thumbnail
         add_image_size( 'wp_bootstrap-thumbnail-md', 170, 170, true ); // Medium thumbnail
         // Portfolio image
-        add_image_size( 'wp_bootstrap_portfolio-single-project', 945, 433, true );
-        add_image_size( 'wp_bootstrap_portfolio-thumbnail-project', 380, 285, true );
+        add_image_size( 'wp_bootstrap_portfolio-single-project', 945, 433, true ); // Single Portfolio thumbnail
+        add_image_size( 'wp_bootstrap_portfolio-thumbnail-project', 380, 285, true ); // Portfolio thumbnail
 
         /**
          * Register navigation menus.
@@ -199,6 +199,8 @@ function wp_bootstrap_scripts() {
      * Enqueue Styles
      */
     wp_enqueue_style( 'custom_style', get_template_directory_uri() . '/public/css/style.min.css', array(), '1.0.0', 'all' );
+
+    wp_deregister_script( 'jquery' );
 
     /**
      * Enqueue Scripts
