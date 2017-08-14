@@ -173,6 +173,20 @@ function wp_bootstrap_widgets_init() {
         'before_title'  => '<h4>',
         'after_title'   => '</h4><div class="hline"></div>',
     ) );
+
+    /**
+     * Contact Widget
+     */
+    register_sidebar( array(
+        'name'          => esc_html__( 'Contact Sidebar', 'wp_bootstrap' ),
+        'id'            => 'wp_bootstrap-contact-sidebar',
+        'description'   => esc_html__( 'Contact Sidebar that appears on contact page.', 'wp_bootstrap' ),
+        'class'         => '',
+        'before_widget' => '',
+        'after_widget'  => '<div class="spacing"></div>',
+        'before_title'  => '<h4>',
+        'after_title'   => '</h4><div class="hline"></div>',
+    ) );
 }
 
 add_action( 'widgets_init', 'wp_bootstrap_widgets_init' );
