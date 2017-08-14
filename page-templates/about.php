@@ -12,6 +12,8 @@
 get_header();
 ?>
 
+<?php get_template_part( 'template-parts/header/navigation' ); ?>
+
 <div class="container about__wrapper">
     <div class="row">
         <?php if ( have_posts() ):
@@ -31,8 +33,6 @@ get_header();
         endif; ?>
     </div> <!-- /.row -->
 </div> <!-- /.container -->
-
-<?php get_template_part( 'template-parts/header/navigation' ); ?>
 
 <?php get_template_part( 'template-parts/about/team' ); ?>
 
