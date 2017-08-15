@@ -47,12 +47,13 @@ function wp_bootstrap_cpt_portfolio() {
         'exclude_from_search' => false,
         'publicly_queryable'  => true,
         'capability_type'     => 'post',
+        'rewrite'             => array('slug' => 'portfolio'),
     );
 
     register_post_type( 'portfolio', $args );
 }
 
-add_action( 'init', 'wp_bootstrap_cpt_portfolio');
+add_action( 'init', 'wp_bootstrap_cpt_portfolio' );
 
 /**
  * Register a taxonomy for Portfolio Item Categories.
@@ -92,7 +93,7 @@ function wp_bootstrap_portfolio_category() {
     register_taxonomy( 'portfolio_category', array( 'portfolio' ), $args );
 }
 
-add_action( 'init', 'wp_bootstrap_portfolio_category');
+add_action( 'init', 'wp_bootstrap_portfolio_category' );
 
 /**
  * Register a taxonomy for Portfolio Item Tags.
@@ -132,7 +133,7 @@ function wp_bootstrap_portfolio_tag() {
     register_taxonomy( 'portfolio_tag', array( 'portfolio' ), $args );
 }
 
-add_action( 'init', 'wp_bootstrap_portfolio_tag');
+add_action( 'init', 'wp_bootstrap_portfolio_tag' );
 
 /**
  * Function that fills the box with the desired content.
@@ -170,7 +171,7 @@ function wp_bootstrap_cpt_portfolio_html( $post ) {
             <td>
                 <input type="text" id="wp_bootstrap_portfolio_web"
                        name="wp_bootstrap_portfolio_web"
-                       value="<?php echo esc_attr( $clientName ); ?>"
+                       value="<?php echo esc_attr( $clientWeb ); ?>"
                        class="regular-text"
                 >
             </td>

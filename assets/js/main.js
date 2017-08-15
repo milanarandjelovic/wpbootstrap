@@ -7,9 +7,9 @@ require('./plugins/jquery.isotope.min');
 
 (function ($) {
   "use strict";
-  var $container = $('.portfolio'),
-    $items = $container.find('.portfolio-item'),
-    portfolioLayout = 'fitRows';
+  var $container = $('.portfolio');
+  var $items = $container.find('.portfolio-item');
+  var portfolioLayout = 'fitRows';
 
   if ($container.hasClass('portfolio-centered')) {
     portfolioLayout = 'masonry';
@@ -34,10 +34,13 @@ require('./plugins/jquery.isotope.min');
 
   $('nav.portfolio-filter ul a').on('click', function () {
     var selector = $(this).attr('data-filter');
+    selector = selector === '*' ? '*' : '.' + selector;
 
     $container.isotope({ filter: selector }, refreshWaypoints());
     $('nav.portfolio-filter ul a').removeClass('active');
+    $('nav.portfolio-filter ul li').removeClass('active');
     $(this).addClass('active');
+    $(this).parent().addClass('active');
 
     return false;
   });
