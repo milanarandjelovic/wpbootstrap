@@ -1,6 +1,6 @@
 # WPBootstrap WordPress Theme
 
-![WPBootstrap](https://github.com/milanarandjelovic/wpbootstrap/wpbootstrap.png)
+![WPBootstrap](https://github.com/milanarandjelovic/wpbootstrap/blob/master/wpbootstrap.png)
 
 ### Install
 
