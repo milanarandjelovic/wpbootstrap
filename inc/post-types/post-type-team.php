@@ -71,7 +71,7 @@ function wp_bootstrap_cpt_team_html( $post ) {
         <tr>
             <th>
                 <label for="wp_bootstrap_team_position">
-                    <?php _e( 'Client Position', 'wp_bootstrap' ); ?>
+                    <?php _e( 'Member Position', 'wp_bootstrap' ); ?>
                 </label>
             </th>
             <td>
@@ -85,7 +85,7 @@ function wp_bootstrap_cpt_team_html( $post ) {
         <tr>
             <th>
                 <label for="wp_bootstrap_team_email">
-                    <?php _e( 'Client Email', 'wp_bootstrap' ); ?>
+                    <?php _e( 'Member Email', 'wp_bootstrap' ); ?>
                 </label>
             </th>
             <td>
@@ -99,7 +99,7 @@ function wp_bootstrap_cpt_team_html( $post ) {
         <tr>
             <th>
                 <label for="wp_bootstrap_team_twitter">
-                    <?php _e( 'Client Twitter', 'wp_bootstrap' ); ?>
+                    <?php _e( 'Member Twitter', 'wp_bootstrap' ); ?>
                 </label>
             </th>
             <td>
