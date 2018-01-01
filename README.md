@@ -10,7 +10,3 @@
 
 ###### 2. Install dependencies
 `npm install` or `yarn`
-
-## License
-
-The WPBootstrap is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
