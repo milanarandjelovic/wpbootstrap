@@ -2,5 +2,6 @@
 # Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
 .idea/
 node_modules/
+.cache-loader
 npm-debug.log
 yarn-error.log

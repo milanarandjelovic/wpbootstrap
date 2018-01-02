@@ -1,0 +1,35 @@
+.header__wrapper {
+  background: $header_wrapper_color;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+
+  .header__title {
+    color: $white;
+    margin-left: 15px;
+  }
+}
+
+.header__wrapper-home {
+  background-color: $header_wrapper_color;
+  min-height: 550px;
+  padding-top: 100px;
+  padding-bottom: 0;
+  text-align: center;
+
+  h1 {
+    color: $white;
+    margin-bottom: 25px;
+  }
+
+  h3,
+  h5 {
+    color: $white;
+    font-weight: 400;
+  }
+
+  .img-responsive {
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700,900');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,900');
+
+/***********************************************************************************
+# Colors
+***********************************************************************************/
+$white: #fff;
+$black: #000;
+$background_color: #f1f2f4;
+$dark-grey : #333;
+$light-grey : #898989;
+$lighter-grey : #f1f1f1;
+
+// Link
+$base_color: #384452;
+$link_hover_color: #01b2fe;
+
+// Navigation
+$navbar_background_color: #384452;
+$navbar_link_color: #00b3fe;
+
+// Header
+$header_wrapper_color: #00b3fe;
+
+// Footer
+$footer_background_color: #384452;
+$footer_text_color: #bfc9d3;
+$footer_icon_hover: #00b3fe;
+
+// Blog
+$post_title_color: #00b3fe;
+$post_h_f_border_color: #d2d2dd;
+$post_posted_at_color: #b3b3b3;
+$post_posted_by_color: #f39c12;
+
+// Button
+$btn_blue_color: #384452;
+$btn_light_blue_color: #5ab6f7;
+$btn_blue_hover_color: #00b3fe;
+
+// Sidebar
+$badge_blue_color: #00b3fe;
+$recent_post_link_color: #2f2f2f;
+$recent_post_em_color: #b3b3b3;
+
+// Post Comments
+$comment_metadata_color: #999;
+$comment_reply_link_color: #ff9d1d;
+$comment_reply_link_hover_color: #f56b08;
+$post_navigation_link_hover_color: #ff9d1d;
+
+// Pagination
+$pagination_background_color: #e6e8ec;
+$pagination_color: #4d306e;
+$pagination_border_color: #d2d2dd;
+$pagination_active_background_color: #5ab6f7;
+
+// Clients
+$clients_background_color: #f7f7f7;
+
+/***********************************************************************************
+ Typography
+***********************************************************************************/
+$raleway_font: 'Raleway', sans-serif;
+$lato_font: 'Lato', sans-serif;
+
+/***********************************************************************************
+# Animations
+***********************************************************************************/
+$time: 320ms;
+$time_slow: 700ms;
+
+$swing: cubic-bezier(.55, 0, .1, 1);
+$swift: cubic-bezier(.4, 0, .2, 1);
+$ease: ease;
+
+$transition-default: all $time $ease;

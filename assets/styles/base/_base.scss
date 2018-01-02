@@ -1,0 +1,33 @@
+body {
+  margin-top: 60px;
+  background: $background_color;
+  height: 100%;
+  font-family: $lato_font;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $raleway_font;
+  font-weight: 700;
+}
+
+p {
+  padding: 0;
+  margin-bottom: 12px;
+  font-family: $lato_font;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: $base_color;
+  margin-top: 10px;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}

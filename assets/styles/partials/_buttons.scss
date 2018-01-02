@@ -1,0 +1,65 @@
+.btn-blue {
+  color: $white;
+  background-color: $btn_blue_color;
+  border-color: $btn_blue_color;
+  margin: 4px;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active,
+  .open,
+  .dropdown-toggle.btn-blue {
+    color: $white;
+    background-color: $btn_blue_hover_color;
+    border-color: $btn_blue_hover_color;
+  }
+}
+
+.btn-light-blue {
+  color: $white;
+  background-color: $btn_light_blue_color;
+  border-color: $btn_light_blue_color;
+  margin: 4px;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active,
+  .open,
+  .dropdown-toggle.btn-blue {
+    color: $white;
+    background-color: $btn_blue_color;
+    border-color: $btn_blue_color;
+  }
+}
+
+.dmbutton:hover,
+.dmbutton:active,
+.dmbutton:focus {
+  color: $white;
+  background-color: #222;
+  border-color: $white;
+}
+
+.dmbutton {
+  background: rgba(0, 0, 0, 0);
+  border: 1px solid $white;
+  color: $white;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  letter-spacing: .85px;
+  padding: 1.025rem 2.25rem 1.0875rem;
+  font-size: 1.55rem;
+  cursor: pointer;
+  line-height: normal;
+  margin: 0 0 1.25rem;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  -webkit-transition: background-color 300ms ease-out;
+  -moz-transition: background-color 300ms ease-out;
+  transition: background-color 300ms ease-out;
+  -webkit-appearance: none;
+  font-weight: normal !important;
+}

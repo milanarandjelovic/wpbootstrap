@@ -1,0 +1,27 @@
+.post-nav {
+  .pager {
+    li {
+      display: inline;
+      padding: 0 5px;
+
+      a {
+        padding: 18px;
+        border-radius: 0;
+        border-color: $pagination_border_color;
+        background-color: $pagination_background_color;
+        color: $pagination_color;
+      }
+
+      span {
+        border-radius: 0;
+        padding: 18px;
+
+        &.active {
+          background-color: $pagination_active_background_color;
+          color: $white;
+          border: none;
+        }
+      }
+    }
+  }
+}
