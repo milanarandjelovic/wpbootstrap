@@ -28,6 +28,7 @@ class WPBootstrap_Init {
 		add_action( 'after_setup_theme', array( $this, 'add_theme_support' ), 10 );
 		add_action( 'after_setup_theme', array( $this, 'register_navigation_menus' ) );
 		add_action( 'widgets_init', array( $this, 'widget_init' ) );
+		add_action( 'widgets_init', array( $this, 'wp_bootstrap_register_widgets' ) );
 		add_action( 'after_setup_theme', array( $this, 'load_theme_text_domain' ) );
 		add_action( 'after_setup_theme', array( $this, 'wp_bootstrap_content_width' ), 0 );
 	}
@@ -147,6 +148,7 @@ class WPBootstrap_Init {
 	 * Register navigation menu for WPBootstrap theme.
 	 *
 	 * @access public
+	 * @since  1.0.0
 	 */
 	public function register_navigation_menus() {
 		/**
@@ -271,6 +273,7 @@ class WPBootstrap_Init {
 	 * Load theme domain for Codex theme
 	 *
 	 * @access public
+	 * @since  1.0.0
 	 */
 	public function load_theme_text_domain() {
 		/*
@@ -292,5 +295,21 @@ class WPBootstrap_Init {
 	 */
 	public function wp_bootstrap_content_width() {
 		$GLOBALS['content_width'] = apply_filters( 'wp_bootstrap_content_width', 640 );
+	}
+
+	/**
+	 * Register WPBootstrap widgets.
+	 *
+	 * @access public
+	 * @since  1.0.0
+	 */
+	public function wp_bootstrap_register_widgets() {
+		register_widget( 'WPBootstrap_Widget_All_Posts' );
+		register_widget( 'WPBootstrap_Widget_Categories' );
+		register_widget( 'WPBootstrap_Widget_FAQ' );
+		register_widget( 'WPBootstrap_Widget_Page' );
+		register_widget( 'WPBootstrap_Widget_Popular_Tags' );
+		register_widget( 'WPBootstrap_Widget_Recent_Posts' );
+		register_widget( 'WPBootstrap_Widget_Social_Links' );
 	}
 }

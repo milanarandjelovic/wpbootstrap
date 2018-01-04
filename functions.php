@@ -16,8 +16,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 define( 'WPBOOTSTRAP_VERSION', '1.0.0' );
 define( 'WPBOOTSTRAP_PATH', wp_normalize_path( get_template_directory() ) );
-define( 'WPBOOTSTRAP_WIDGETS_PATH', WPBOOTSTRAP_PATH . '/includes/classes/widgets/' );
-define( 'WPBOOTSTRAP_POST_TYPES_PATH', WPBOOTSTRAP_PATH . '/includes/classes/post-types/' );
 define( 'WPBOOTSTRAP_URI', get_template_directory_uri() );
 define( 'WPBOOTSTRAP_ADMIN_URI', WPBOOTSTRAP_URI . '/includes/admin/' );
 define( 'WPBOOTSTRAP_STYLES_URI', WPBOOTSTRAP_URI . '/dist/styles/' );

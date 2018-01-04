@@ -38,7 +38,6 @@ class WPBootstrap {
 	public static function get_services() {
 		return [
 			WPBootstrap_Init::class,
-			WPBootstrap_Widgets_Init::class,
 			WPBootstrap_Scripts::class,
 		];
 	}
