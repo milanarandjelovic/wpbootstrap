@@ -1,6 +1,8 @@
 <?php
 /**
- * Widget API: WPBootstrap_Widget_FAQ class
+ * Widget API: WPBootstrap_Widget_FAQ class.
+ *
+ * @link       https://codex.wordpress.org/Widgets_API
  *
  * @package    WPBootstrap
  * @subpackage Core
@@ -45,7 +47,8 @@ class WPBootstrap_Widget_FAQ extends WP_Widget {
 	 * @param array $instance Settings for the current Recent Posts widget instance.
 	 */
 	public function widget( $args, $instance ) {
-		$title     = apply_filters( 'widget_title', empty( $instance['title'] ) ? __( 'FAQ' ) : $instance['title'], $instance, $this->id_base );
+		$title     = apply_filters( 'widget_title', empty( $instance['title'] ) ? __( 'FAQ' ) : $instance['title'],
+			$instance, $this->id_base );
 		$post_type = $instance['post_type'];
 
 		if ( ! empty( $title ) ) :
@@ -77,7 +80,7 @@ class WPBootstrap_Widget_FAQ extends WP_Widget {
 			<?php
 			while ( $faq_query->have_posts() ) :
 				$faq_query->the_post();
-			?>
+				?>
 				<p>
 					<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 				</p>
@@ -121,8 +124,8 @@ class WPBootstrap_Widget_FAQ extends WP_Widget {
 	 * @return string|void
 	 */
 	public function form( $instance ) {
-		$title        = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
-		$post_type    = esc_attr( $instance['post_type'] );
+		$title          = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
+		$post_type      = esc_attr( $instance['post_type'] );
 		$all_post_types = get_post_types();
 		?>
 		<p>
@@ -130,8 +133,8 @@ class WPBootstrap_Widget_FAQ extends WP_Widget {
 				<?php esc_attr_e( 'Title:', 'wp_bootstrap' ); ?>
 			</label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"
-				name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text"
-				value="<?php echo esc_attr( $title ); ?>"
+			       name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text"
+			       value="<?php echo esc_attr( $title ); ?>"
 			/>
 		</p>
 		<p>
@@ -139,8 +142,8 @@ class WPBootstrap_Widget_FAQ extends WP_Widget {
 				<?php esc_attr_e( 'Select Post Type:', 'wp_bootstrap' ); ?>
 			</label>
 			<select name="<?php echo esc_attr( $this->get_field_name( 'post_type' ) ); ?>"
-					id="<?php echo esc_attr( $this->get_field_id( 'post_type' ) ); ?>"
-					class="widefat"
+			        id="<?php echo esc_attr( $this->get_field_id( 'post_type' ) ); ?>"
+			        class="widefat"
 			>
 				<option value="0">None</option>
 				<?php foreach ( $all_post_types as $ptype ) : ?>

@@ -1,6 +1,8 @@
 <?php
 /**
- * Widget API: WPBootstrap_Widget_Page class
+ * Widget API: WPBootstrap_Widget_Page class.
+ *
+ * @link       https://codex.wordpress.org/Widgets_API
  *
  * @package    WPBootstrap
  * @subpackage Core
@@ -131,8 +133,8 @@ class WPBootstrap_Widget_Page extends WP_Widget {
 			<label for="<?php echo esc_attr( $this->get_field_id( 'page' ) ); ?>">
 				<?php esc_attr_e( 'Page:', 'wp_bootstrap' ); ?>
 				<select name="<?php echo esc_attr( $this->get_field_name( 'page' ) ); ?>"
-					id="<?php echo esc_attr( $this->get_field_id( 'page' ) ); ?>"
-					class="widefat"
+				        id="<?php echo esc_attr( $this->get_field_id( 'page' ) ); ?>"
+				        class="widefat"
 				>
 					<option value="0" <?php selected( 0, $current_page_query ); ?> >None</option>
 					<?php

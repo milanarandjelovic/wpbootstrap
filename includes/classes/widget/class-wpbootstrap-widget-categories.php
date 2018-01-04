@@ -1,6 +1,8 @@
 <?php
 /**
- * Widget API: WPBootstrap_Widget_Categories class
+ * Widget API: WPBootstrap_Widget_Categories class.
+ *
+ * @link       https://codex.wordpress.org/Widgets_API
  *
  * @package    WPBootstrap
  * @subpackage Core
@@ -45,7 +47,8 @@ class WPBootstrap_Widget_Categories extends WP_Widget {
 	 */
 	public function widget( $args, $instance ) {
 		/** This filter is documented in wp-includes/widgets/class-wp-widget-pages.php */
-		$title = apply_filters( 'widget_title', empty( $instance['title'] ) ? __( 'Categories' ) : $instance['title'], $instance, $this->id_base );
+		$title = apply_filters( 'widget_title', empty( $instance['title'] ) ? __( 'Categories' ) : $instance['title'],
+			$instance, $this->id_base );
 
 		$c = ! empty( $instance['count'] ) ? '1' : '0';
 
@@ -131,13 +134,13 @@ class WPBootstrap_Widget_Categories extends WP_Widget {
 				<?php esc_attr_e( 'Title:', 'wp_bootstrap' ); ?>
 			</label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"
-				name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text"
-				value="<?php echo esc_attr( $title ); ?>"
+			       name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text"
+			       value="<?php echo esc_attr( $title ); ?>"
 			/>
 		</p>
 
 		<input type="checkbox" class="checkbox" id="<?php echo esc_attr( $this->get_field_id( 'count' ) ); ?>"
-			name="<?php echo esc_attr( $this->get_field_id( 'count' ) ); ?>"<?php checked( $count ); ?>
+		       name="<?php echo esc_attr( $this->get_field_id( 'count' ) ); ?>"<?php checked( $count ); ?>
 		/>
 		<label for="<?php echo esc_attr( $this->get_field_id( 'count' ) ); ?>">
 			<?php esc_attr_e( 'Show post counts', 'wp_bootstrap' ); ?>

@@ -1,6 +1,8 @@
 <?php
 /**
- * Widget API: WPBootstrap_Widget_Recent_Posts class
+ * Widget API: WPBootstrap_Widget_Recent_Posts class.
+ *
+ * @link       https://codex.wordpress.org/Widgets_API
  *
  * @package    WPBootstrap
  * @subpackage Core
@@ -14,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Class WPBootstrap_Widget_Recent_Posts
+ * Class WPBootstrap_Widget_Recent_Posts.
  */
 class WPBootstrap_Widget_Recent_Posts extends WP_Widget {
 
@@ -45,7 +47,8 @@ class WPBootstrap_Widget_Recent_Posts extends WP_Widget {
 	 * @param array $instance Settings for the current Recent Posts widget instance.
 	 */
 	public function widget( $args, $instance ) {
-		$title = apply_filters( 'widget_title', empty( $instance['title'] ) ? __( 'Recent Posts' ) : $instance['title'], $instance, $this->id_base );
+		$title = apply_filters( 'widget_title', empty( $instance['title'] ) ? __( 'Recent Posts' ) : $instance['title'],
+			$instance, $this->id_base );
 
 		if ( ! empty( $title ) ) :
 			echo $args['before_title'] . $title . $args['after_title']; // WPCS: XSS ok.
@@ -83,7 +86,7 @@ class WPBootstrap_Widget_Recent_Posts extends WP_Widget {
 				<?php
 				while ( $recent_posts_query->have_posts() ) :
 					$recent_posts_query->the_post();
-				?>
+					?>
 					<li>
 						<?php if ( has_post_thumbnail() && $show_thumbs ) : ?>
 							<a href="<?php the_permalink(); ?>">
@@ -148,13 +151,13 @@ class WPBootstrap_Widget_Recent_Posts extends WP_Widget {
 				<?php esc_attr_e( 'Title:', 'wp_bootstrap' ); ?>
 			</label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"
-				name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text"
-				value="<?php echo esc_attr( $title ); ?>"
+			       name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text"
+			       value="<?php echo esc_attr( $title ); ?>"
 			/>
 		</p>
 		<p>
 			<input type="checkbox" class="checkbox" id="<?php echo esc_attr( $this->get_field_id( 'picture' ) ); ?>"
-				name="<?php echo esc_attr( $this->get_field_name( 'picture' ) ); ?>"
+			       name="<?php echo esc_attr( $this->get_field_name( 'picture' ) ); ?>"
 				<?php checked( $picture ); ?>
 			>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'picture' ) ); ?>">
@@ -166,8 +169,8 @@ class WPBootstrap_Widget_Recent_Posts extends WP_Widget {
 				<?php esc_attr_e( 'Number of posts to show:', 'wp_bootstrap' ); ?>
 			</label>
 			<input class="tiny-text" id="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>"
-				name="<?php echo esc_attr( $this->get_field_name( 'number' ) ); ?>" type="number" step="1" min="1"
-				value="<?php echo esc_attr( $number ); ?>" size="3"
+			       name="<?php echo esc_attr( $this->get_field_name( 'number' ) ); ?>" type="number" step="1" min="1"
+			       value="<?php echo esc_attr( $number ); ?>" size="3"
 			/>
 		</p>
 		<?php

@@ -1,6 +1,8 @@
 <?php
 /**
- * Widget API: WPBootstrap_Widget_Popular_Tags class
+ * Widget API: WPBootstrap_Widget_Popular_Tags class.
+ *
+ * @link       https://codex.wordpress.org/Widgets_API
  *
  * @package    WPBootstrap
  * @subpackage Core
@@ -45,7 +47,9 @@ class WPBootstrap_Widget_Popular_Tags extends WP_Widget {
 	 */
 	public function widget( $args, $instance ) {
 		/** This filter is documented in wp-includes/widgets/class-wp-widget-pages.php */
-		$title = apply_filters( 'widget_title', empty( $instance['title'] ) ? __( 'WPBootstrap Popular Tags' ) : $instance['title'], $instance, $this->id_base );
+		$title = apply_filters( 'widget_title',
+			empty( $instance['title'] ) ? __( 'WPBootstrap Popular Tags' ) : $instance['title'], $instance,
+			$this->id_base );
 
 		if ( $title ) :
 			echo $args['before_title'] . $title . $args['after_title']; // WPCS: XSS ok.
@@ -63,7 +67,7 @@ class WPBootstrap_Widget_Popular_Tags extends WP_Widget {
 				<?php
 				foreach ( $tags as $tag ) :
 					$tag_link = get_tag_link( $tag->term_id );
-				?>
+					?>
 					<a href="<?php echo esc_url( $tag_link ); ?>" title="<?php esc_attr( $tag->name ); ?>"
 					   class="<?php echo esc_attr( $tag->slug ); ?> btn btn-blue"
 					>
@@ -116,8 +120,8 @@ class WPBootstrap_Widget_Popular_Tags extends WP_Widget {
 			)
 		);
 
-		$title    = sanitize_text_field( $instance['title'] );
-		$number   = isset( $instance['number'] ) ? absint( $instance['number'] ) : 5;
+		$title  = sanitize_text_field( $instance['title'] );
+		$number = isset( $instance['number'] ) ? absint( $instance['number'] ) : 5;
 
 		?>
 		<p>
@@ -125,8 +129,8 @@ class WPBootstrap_Widget_Popular_Tags extends WP_Widget {
 				<?php esc_attr_e( 'Title:', 'wp_bootstrap' ); ?>
 			</label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"
-				name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text"
-				value="<?php echo esc_attr( $title ); ?>"
+			       name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text"
+			       value="<?php echo esc_attr( $title ); ?>"
 			/>
 		</p>
 		<p>
@@ -134,8 +138,8 @@ class WPBootstrap_Widget_Popular_Tags extends WP_Widget {
 				<?php esc_attr_e( 'Number of popular tags to show:', 'wp_bootstrap' ); ?>
 			</label>
 			<input class="tiny-text" id="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>"
-				name="<?php echo esc_attr( $this->get_field_name( 'number' ) ); ?>" type="number" step="1" min="1"
-				value="<?php echo esc_attr( $number ); ?>" size="3"
+			       name="<?php echo esc_attr( $this->get_field_name( 'number' ) ); ?>" type="number" step="1" min="1"
+			       value="<?php echo esc_attr( $number ); ?>" size="3"
 			/>
 		</p>
 		<?php

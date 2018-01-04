@@ -1,6 +1,8 @@
 <?php
 /**
- * Widget API: WPBootstrap_Widget_Social_Links class
+ * Widget API: WPBootstrap_Widget_Social_Links class.
+ *
+ * @link       https://codex.wordpress.org/Widgets_API
  *
  * @package    WPBootstrap
  * @subpackage Core
@@ -14,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Class WPBootstrap_Widget_Social_Links
+ * Class WPBootstrap_Widget_Social_Links.
  */
 class WPBootstrap_Widget_Social_Links extends WP_Widget {
 
@@ -138,8 +140,8 @@ class WPBootstrap_Widget_Social_Links extends WP_Widget {
 				<?php esc_attr_e( 'Title:' ); ?>
 			</label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"
-				name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text"
-				value="<?php echo esc_attr( $title ); ?>"
+			       name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text"
+			       value="<?php echo esc_attr( $title ); ?>"
 			/>
 		</p>
 		<p>
@@ -150,8 +152,8 @@ class WPBootstrap_Widget_Social_Links extends WP_Widget {
 				<?php esc_attr_e( 'Dribbble:', 'wp_bootstrap' ); ?>
 			</label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'dribbble' ) ); ?>"
-				name="<?php echo esc_attr( $this->get_field_name( 'dribbble' ) ); ?>" type="text"
-				value="<?php echo esc_attr( $dribbble ); ?>"
+			       name="<?php echo esc_attr( $this->get_field_name( 'dribbble' ) ); ?>" type="text"
+			       value="<?php echo esc_attr( $dribbble ); ?>"
 			/>
 		</p>
 		<p>
@@ -159,8 +161,8 @@ class WPBootstrap_Widget_Social_Links extends WP_Widget {
 				<?php esc_attr_e( 'Facebook:', 'wp_bootstrap' ); ?>
 			</label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'facebook' ) ); ?>"
-				name="<?php echo esc_attr( $this->get_field_name( 'facebook' ) ); ?>" type="text"
-				value="<?php echo esc_attr( $facebook ); ?>"
+			       name="<?php echo esc_attr( $this->get_field_name( 'facebook' ) ); ?>" type="text"
+			       value="<?php echo esc_attr( $facebook ); ?>"
 			/>
 		</p>
 		<p>
@@ -168,8 +170,8 @@ class WPBootstrap_Widget_Social_Links extends WP_Widget {
 				<?php esc_attr_e( 'Twitter:', 'wp_bootstrap' ); ?>
 			</label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'twitter' ) ); ?>"
-				name="<?php echo esc_attr( $this->get_field_name( 'twitter' ) ); ?>" type="text"
-				value="<?php echo esc_attr( $twitter ); ?>"
+			       name="<?php echo esc_attr( $this->get_field_name( 'twitter' ) ); ?>" type="text"
+			       value="<?php echo esc_attr( $twitter ); ?>"
 			/>
 		</p>
 		<p>
@@ -177,8 +179,8 @@ class WPBootstrap_Widget_Social_Links extends WP_Widget {
 				<?php esc_attr_e( 'Instagram:', 'wp_bootstrap' ); ?>
 			</label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'instagram' ) ); ?>"
-				name="<?php echo esc_attr( $this->get_field_name( 'instagram' ) ); ?>" type="text"
-				value="<?php echo esc_attr( $instagram ); ?>"
+			       name="<?php echo esc_attr( $this->get_field_name( 'instagram' ) ); ?>" type="text"
+			       value="<?php echo esc_attr( $instagram ); ?>"
 			/>
 		</p>
 		<p>
@@ -186,8 +188,8 @@ class WPBootstrap_Widget_Social_Links extends WP_Widget {
 				<?php esc_attr_e( 'Tumblr:', 'wp_bootstrap' ); ?>
 			</label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'tumblr' ) ); ?>"
-				name="<?php echo esc_attr( $this->get_field_name( 'tumblr' ) ); ?>" type="text"
-				value="<?php echo esc_attr( $tumblr ); ?>"
+			       name="<?php echo esc_attr( $this->get_field_name( 'tumblr' ) ); ?>" type="text"
+			       value="<?php echo esc_attr( $tumblr ); ?>"
 			/>
 		</p>
 		<?php
