@@ -7,7 +7,7 @@
 
 $args = array(
     // Type and Status Parameters
-    'post_type'   => 'portfolio',
+    'post_type'   => 'wpb-portfolio',
     'post_status' => 'publish',
 );
 

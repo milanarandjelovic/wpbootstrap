@@ -8,7 +8,7 @@
 $args = array(
     // Type and Status Parameters
     'post_type'     => array(
-        'feature',
+        'wp-bootstrap-feature',
     ),
     'post_status'   => array(
         'publish',

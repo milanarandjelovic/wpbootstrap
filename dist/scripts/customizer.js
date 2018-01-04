@@ -60,27 +60,21 @@
 /******/ 	__webpack_require__.p = "/wp-content/themes/wpbootstrap/dist/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
-/******/ ({
-
-/***/ 0:
-/***/ (function(module, exports) {
-
-module.exports = jQuery;
-
-/***/ }),
-
-/***/ 7:
+/******/ ([
+/* 0 */,
+/* 1 */,
+/* 2 */,
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(8);
+module.exports = __webpack_require__(4);
 
 
 /***/ }),
-
-/***/ 8:
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(jQuery) {/**
@@ -126,9 +120,14 @@ module.exports = __webpack_require__(8);
   });
 })(jQuery);
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports) {
+
+module.exports = jQuery;
 
 /***/ })
-
-/******/ });
+/******/ ]);
 //# sourceMappingURL=customizer.js.map

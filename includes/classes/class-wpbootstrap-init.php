@@ -27,10 +27,18 @@ class WPBootstrap_Init {
 	public function register() {
 		add_action( 'after_setup_theme', array( $this, 'add_theme_support' ), 10 );
 		add_action( 'after_setup_theme', array( $this, 'register_navigation_menus' ) );
-		add_action( 'widgets_init', array( $this, 'widget_init' ) );
-		add_action( 'widgets_init', array( $this, 'wp_bootstrap_register_widgets' ) );
 		add_action( 'after_setup_theme', array( $this, 'load_theme_text_domain' ) );
 		add_action( 'after_setup_theme', array( $this, 'wp_bootstrap_content_width' ), 0 );
+
+		// Register sidebars and custom widget.
+		add_action( 'widgets_init', array( $this, 'widget_init' ) );
+		add_action( 'widgets_init', array( $this, 'wp_bootstrap_register_widgets' ) );
+
+		// Register custom post types.
+		add_action( 'init', array( $this, 'wp_bootstrap_register_custom_post_type' ) );
+
+		// Register metabox.
+		add_action( 'init', array( $this, 'wp_bootstrap_register_metabox' ) );
 	}
 
 	/**
@@ -311,5 +319,32 @@ class WPBootstrap_Init {
 		register_widget( 'WPBootstrap_Widget_Popular_Tags' );
 		register_widget( 'WPBootstrap_Widget_Recent_Posts' );
 		register_widget( 'WPBootstrap_Widget_Social_Links' );
+	}
+
+	/**
+	 * Register WPBootstrap custom post types.
+	 *
+	 * @access public
+	 * @since  1.0.0
+	 */
+	public function wp_bootstrap_register_custom_post_type() {
+		WPBootstrap_PostType_FAQ::init_custom_post_type();
+		WPBootstrap_PostType_Feature::init_custom_post_type();
+		WPBootstrap_PostType_Portfolio::init_custom_post_type();
+		WPBootstrap_PostType_Team::init_custom_post_type();
+		WPBootstrap_PostType_Testimonial::init_custom_post_type();
+	}
+
+	/**
+	 * Register WPBootstrap metabox.
+	 *
+	 * @access public
+	 * @since  1.0.0
+	 */
+	public function wp_bootstrap_register_metabox() {
+		WPBootstrap_Metabox_Feature::init_metabox();
+		WPBootstrap_Metabox_Portfolio::init_metabox();
+		WPBootstrap_Metabox_Team::init_metabox();
+		WPBootstrap_Metabox_Testimonial::init_metabox();
 	}
 }
