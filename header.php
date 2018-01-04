@@ -4,10 +4,14 @@
  *
  * This is the template that displays all of the <head> section and everything up until <div id="content">
  *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ * @link       https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package WPBootstrap
+ * @package    WPBootstrap
+ * @subpackage Templates
+ * @since      1.0.0
+ * @author     Milan Arandjelovic
  */
+
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>

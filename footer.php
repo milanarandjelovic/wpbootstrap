@@ -4,10 +4,14 @@
  *
  * Contains the closing of the #content div and all content after.
  *
- * @link    https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ * @link       https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package WPBootstrap
+ * @package    WPBootstrap
+ * @subpackage Templates
+ * @since      1.0.0
+ * @author     Milan Arandjelovic
  */
+
 ?>
 
 <footer id="footer-wrap">

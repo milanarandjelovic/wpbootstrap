@@ -7,6 +7,7 @@
  * @package    WPBootstrap
  * @subpackage Core
  * @since      1.0.0
+ * @author     Milan Arandjelovic
  */
 
 // Do not allow directly accessing this file.
