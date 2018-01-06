@@ -15,6 +15,11 @@
  * @author     Milan Arandjelovic
  */
 
+// Do not allow directly accessing this file.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 'Direct script access denied.' );
+}
+
 get_header();
 ?>
 
@@ -27,9 +32,11 @@ get_header();
 	<div class="row">
 
 		<div class="col-md-8">
-			<?php if ( have_posts() ): ?>
-				<?php while ( have_posts() ): the_post(); ?>
-					<?php
+			<?php if ( have_posts() ) : ?>
+				<?php
+				while ( have_posts() ) :
+					the_post();
+
 					/*
 					 * Include the Post-Format-specific template for the content.
 					 * If you want to override this in a child theme, then include a file
@@ -41,7 +48,7 @@ get_header();
 
 				<?php wp_bootstrap_pagination(); ?>
 
-			<?php else: ?>
+			<?php else : ?>
 				<?php get_template_part( 'template-parts/posts/content', 'none' ); ?>
 			<?php endif; ?>
 

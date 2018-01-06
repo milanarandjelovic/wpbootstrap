@@ -15,6 +15,11 @@
  * @author     Milan Arandjelovic
  */
 
+// Do not allow directly accessing this file.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 'Direct script access denied.' );
+}
+
 get_header();
 ?>
 
@@ -25,14 +30,19 @@ get_header();
 <div class="container">
 	<div class="row">
 		<div class="col-md-8">
-			<?php if ( have_posts() ):
-				while ( have_posts() ): the_post(); ?>
+			<?php
+			if ( have_posts() ) :
+				while ( have_posts() ) :
+					the_post();
+			?>
 					<div class="post__holder">
-						<?php if ( has_post_thumbnail() ):
+						<?php
+						if ( has_post_thumbnail() ) :
 							the_post_thumbnail( 'wp_bootstrap_post-thumbnail', array(
 								'class' => 'img-responsive',
 							) );
-						endif; ?>
+						endif;
+						?>
 						<a href="<?php the_permalink(); ?>">
 							<h3 class="post__title"><?php the_title(); ?></h3>
 						</a>
@@ -41,8 +51,10 @@ get_header();
 						</div> <!-- /.post_content -->
 						<div class="spacing"></div>
 					</div> <!-- /.post__holder -->
-				<?php endwhile;
-			endif; ?>
+				<?php
+				endwhile;
+			endif;
+			?>
 		</div> <!-- /.col-md-8 -->
 		<div class="col-md-4">
 			<?php get_sidebar(); ?>

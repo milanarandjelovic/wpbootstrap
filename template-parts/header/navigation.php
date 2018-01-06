@@ -1,4 +1,18 @@
 <?php
+/**
+ * Template for display navigation
+ *
+ * @package    WPBootstrap
+ * @subpackage Templates
+ * @since      1.0.0
+ * @author     Milan Arandjelovic
+ */
+
+// Do not allow directly accessing this file.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 'Direct script access denied.' );
+}
+
 $wp_bootstrap_data = get_option( 'wp_bootstrap_data' );
 $nav_back          = $wp_bootstrap_data['wp_bootstrap__navigation-background-color']['background-color'];
 ?>

@@ -10,8 +10,14 @@
  * @author     Milan Arandjelovic
  */
 
+// Do not allow directly accessing this file.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 'Direct script access denied.' );
+}
+
 ?>
 
-<?php if ( is_active_sidebar( 'wp_bootstrap-sidebar' ) ) :
+<?php
+if ( is_active_sidebar( 'wp_bootstrap-sidebar' ) ) :
 	dynamic_sidebar( 'wp_bootstrap-sidebar' );
-endif; ?>
+endif;

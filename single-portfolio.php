@@ -10,6 +10,11 @@
  * @author     Milan Arandjelovic
  */
 
+// Do not allow directly accessing this file.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 'Direct script access denied.' );
+}
+
 get_header();
 ?>
 <?php get_template_part( 'template-parts/header/navigation' ); ?>
@@ -32,12 +37,12 @@ get_header();
 						<!-- Indicators -->
 						<ol class="carousel-indicators">
 							<?php
-							$imagesCount = count( $images );
-							for ( $i = 0; $i < $imagesCount; $i ++ ):
+							$images_count = count( $images );
+							for ( $i = 0; $i < $images_count; $i ++ ) :
 								?>
 								<li data-target="single-portfolio-carousel"
-								    data-slide-to="<?php echo $i; ?>"
-									<?php echo $i == 0 ? 'class="active"' : ''; ?>
+									data-slide-to="<?php echo $i; // WPCS: XSS OK. ?>"
+									<?php echo 0 === $i ? 'class="active"' : ''; ?>
 								>
 								</li>
 							<?php endfor; ?>
@@ -49,12 +54,9 @@ get_header();
 							$counter = 0;
 							foreach ( $images as $img ) :
 								?>
-								<div class="item <?php echo $counter == 0 ? 'active' : ''; ?>">
+								<div class="item <?php echo 0 === $counter ? 'active' : ''; ?>">
 									<img
-										src="<?php echo wp_get_attachment_image_src(
-											$img->ID,
-											'wp_bootstrap_portfolio-single-project'
-										)[0]; ?>"
+										src="<?php echo esc_url( wp_get_attachment_image_src( $img->ID, 'wp_bootstrap_portfolio-single-project' )[0] ); ?>"
 									/>
 								</div> <!-- /.item -->
 								<?php $counter ++; ?>
@@ -89,60 +91,67 @@ get_header();
 
 			<!-- PORTFOLIO CATEGORIES -->
 			<?php
-			$categories = get_categories( array( 'taxonomy' => 'portfolio_category' ) );
+			$categories = get_categories( array(
+				'taxonomy' => 'portfolio_category',
+			) );
 
 			if ( ! empty( $categories ) ) :
 				echo '<p><b>Categories:</b>';
-				$isFirstCategory = true;
+				$is_first_category = true;
 
-				foreach ( $categories as $category ):
-					if ( $isFirstCategory != true ):
+				foreach ( $categories as $category ) :
+					if ( true !== $is_first_category ) :
 						echo ', ';
 					endif;
 
-					echo $category->name;
-					$isFirstCategory = false;
+					echo $category->name; // WPCS: XSS OK.
+					$is_first_category = false;
 				endforeach;
 			endif;
 			?>
 			<!-- /PORTFOLIO CATEGORIES -->
 
 			<!-- PORTFOLIO TAGS -->
-			<?php $tags = get_categories( array( 'taxonomy' => 'portfolio_tag' ) );
+			<?php
+			$tags = get_categories( array(
+				'taxonomy' => 'portfolio_tag',
+			) );
 
-			if ( ! empty( $tags ) ):
+			if ( ! empty( $tags ) ) :
 				echo '<p><b>Tags:</b>';
-				$isFirstTag = true;
+				$is_first_tag = true;
 
-				foreach ( $tags as $tag ):
-					if ( $isFirstTag != true ):
+				foreach ( $tags as $tag ) :
+					if ( true !== $is_first_tag ) :
 						echo ', ';
 					endif;
 
-					echo $tag->name;
-					$isFirstTag = false;
+					echo $tag->name; // WPCS: XSS OK.
+					$is_first_tag = false;
 				endforeach;
 			endif;
 			?>
 			<!-- /PORTFOLIO TAGS -->
 
 			<!-- PORTFOLIO CLIENT NAME -->
-			<?php $clientName = get_post_meta( get_the_ID(), '_wp_bootstrap_portfolio_name', true );
+			<?php
+			$client_name = get_post_meta( get_the_ID(), '_wp_bootstrap_portfolio_name', true );
 
-			if ( $clientName != '' ):
-				echo '<p><b>Client: </b>' . $clientName . '</p>';
+			if ( '' !== $client_name ) :
+				echo '<p><b>Client: </b>' . $client_name . '</p>'; // WPCS: XSS OK.
 			endif;
 			?>
 			<!-- /PORTFOLIO CLIENT NAME -->
 
 			<!-- PORTFOLIO CLIENT WEBSITE -->
-			<?php $clientWeb = get_post_meta( get_the_ID(), '_wp_bootstrap_portfolio_web', true );
+			<?php
+			$client_web = get_post_meta( get_the_ID(), '_wp_bootstrap_portfolio_web', true );
 
-			if ( strpos( $clientWeb, " http://" ) === false && strpos( $clientWeb, " https://" ) === false ):
-				$clientWeb = "http://" . $clientWeb;
+			if ( false === strpos( $client_web, ' http://' ) && false === strpos( $client_web, ' https://' ) ) :
+				$client_web = 'http://' . $client_web;
 			endif;
 
-			echo '<p><b>Website: </b><a href="' . $clientWeb . '">' . $clientWeb . '</a>';
+			echo '<p><b>Website: </b><a href="' . $client_web . '">' . $client_web . '</a>'; // WPCS: XSS OK.
 			?>
 			<!-- /PORTFOLIO CLIENT WEBSITE -->
 
@@ -152,34 +161,36 @@ get_header();
 </div> <!-- /.container -->
 
 <?php
-// Define Portfolio Taxonomy
-$taxonomyPortfolio   = array( 'relation' => 'OR' );
-$portfolioCategories = array();
+// Define Portfolio Taxonomy.
+$taxonomy_portfolio   = array(
+	'relation' => 'OR',
+);
+$portfolio_categories = array();
 
-// Define portfolio categories
-foreach ( $categories as $category ):
-	$portfolioCategories = $category->slug;
+// Define portfolio categories.
+foreach ( $categories as $category ) :
+	$portfolio_categories = $category->slug;
 endforeach;
 
-$taxonomyPortfolio[] = array(
+$taxonomy_portfolio[] = array(
 	'taxonomy' => 'portfolio_category',
 	'field'    => 'slug',
 	'operator' => 'IN',
-	'terms'    => $portfolioCategories,
+	'terms'    => $portfolio_categories,
 );
 
-$portfolioTags = array();
+$portfolio_tags = array();
 
-// Define portfolio tags
-foreach ( $tags as $tag ):
-	$portfolioTags = $tag->slug;
+// Define portfolio tags.
+foreach ( $tags as $tag ) :
+	$portfolio_tags = $tag->slug;
 endforeach;
 
-$taxonomyPortfolio[] = array(
+$taxonomy_portfolio[] = array(
 	'taxonomy' => 'portfolio_tag',
 	'field'    => 'slug',
 	'operator' => 'IN',
-	'terms'    => $portfolioTags,
+	'terms'    => $portfolio_tags,
 );
 
 $args = array(
@@ -188,23 +199,26 @@ $args = array(
 	'post_status'    => 'publish',
 	'orderby'        => 'rand',
 	'post__not_in'   => array( get_the_ID() ),
-	'tax_query'      => $taxonomyPortfolio,
+	'tax_query'      => $taxonomy_portfolio,
 );
 
-$relatedPortfolios = new WP_Query( $args );
+$related_portfolios = new WP_Query( $args );
 ?>
 
-<?php if ( $relatedPortfolios->have_posts() ): ?>
+<?php if ( $related_portfolios->have_posts() ) : ?>
 	<div id="portfolio__wrapper">
 		<div class="portfolio__centred">
 			<h3>Related Works.</h3>
 			<div class="recent-items portfolio">
-				<?php while ( $relatedPortfolios->have_posts() ): $relatedPortfolios->the_post(); ?>
+				<?php
+				while ( $related_portfolios->have_posts() ) :
+					$related_portfolios->the_post();
+					?>
 					<div class="portfolio-item">
 						<div class="he-wrap tpl6">
 							<?php
 							$image = '';
-							if ( has_post_thumbnail() ):
+							if ( has_post_thumbnail() ) :
 								the_post_thumbnail( 'wp_bootstrap_portfolio-thumbnail-project' );
 								$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' );
 							endif;
@@ -212,8 +226,8 @@ $relatedPortfolios = new WP_Query( $args );
 							<div class="he-view">
 								<div class="bg a0" data-animate="fadeIn">
 									<h3 class="a1" data-animate="fadeInDown"><?php the_title(); ?></h3>
-									<?php if ( $image != '' ): ?>
-										<a href="<?php echo $image[0]; ?>"
+									<?php if ( '' !== $image ) : ?>
+										<a href="<?php echo esc_url( $image[0] ); ?>"
 										   data-rel="prettyPhoto"
 										   class="dmbutton a2"
 										   data-animate="fadeInUp"

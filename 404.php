@@ -15,6 +15,11 @@
  * @author     Milan Arandjelovic
  */
 
+// Do not allow directly accessing this file.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 'Direct script access denied.' );
+}
+
 get_header();
 ?>
 
@@ -26,7 +31,7 @@ get_header();
 	<div class="row">
 		<div class="col-md-8">
 			<strong>
-				<?php _e( 'There is no content you are searching for. Try using our search below.', 'wp_bootstrap' ); ?>
+				<?php esc_attr_e( 'There is no content you are searching for. Try using our search below.', 'wp_bootstrap' ); ?>
 			</strong>
 			<?php get_search_form(); ?>
 		</div> <!-- /.col-md-8 -->

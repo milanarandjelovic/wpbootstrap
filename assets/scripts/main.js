@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 var $ = require('jquery');
 require('bootstrap-sass');
 
@@ -8,7 +9,7 @@ require('./plugins/jquery.isotope.min');
 (function ($) {
   "use strict";
   var $container = $('.portfolio');
-  var $items = $items;
+  var $items = $container.find('.portfolio-item');
   var portfolioLayout = 'fitRows';
 
   if ($container.hasClass('portfolio-centered')) {
